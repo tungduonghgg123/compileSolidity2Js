@@ -1,3 +1,4 @@
+// manually generate.... 
 class SampleContract {
     var name;
     var age;

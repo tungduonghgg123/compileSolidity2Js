@@ -26,6 +26,7 @@ const jsGenerator = (node) => {
 				node.variables.map(jsGenerator) + ' = ' + jsGenerator(node.initialValue)
 			);
 		return node.variables.map(jsGenerator);
+		
 	case 'ReturnStatement':
 		return 'return ' + jsGenerator(node.expression);
 	case 'StringLiteral':
@@ -43,7 +44,7 @@ const jsGenerator = (node) => {
 	case 'Identifier':
 		return node.name;
 	default:
-		console.log(`***Ahihi unhandled ${node.type}***\n`);
+		console.log(`Ahihi unhandled ${node.type}\n`);
 		break;
 	}
 };
