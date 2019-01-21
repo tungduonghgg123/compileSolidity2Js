@@ -34,12 +34,8 @@ const jsGenerator = (node) => {
         return (
             'var ' + node.name 
         );
-    
     case 'Parameter':
         return node.name;
-	
-	
-	
 	case 'BinaryOperation':
 		return (
 			jsGenerator(node.left) + ` ${node.operator} ` + jsGenerator(node.right)
