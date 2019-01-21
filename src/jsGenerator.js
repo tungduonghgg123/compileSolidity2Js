@@ -21,12 +21,10 @@ const jsGenerator = (node) => {
 		return jsGenerator(node.expression);
 	case 'StateVariableDeclaration' :
 	case 'VariableDeclarationStatement' :
-		if (node.initialValue !== null ) 
-			return (
+		return (node.initialValue !== null) ? 
+			(
 				node.variables.map(jsGenerator) + ' = ' + jsGenerator(node.initialValue)
-			);
-		return node.variables.map(jsGenerator);
-		
+			) :  node.variables.map(jsGenerator);
 	case 'ReturnStatement':
 		return 'return ' + jsGenerator(node.expression);
 	case 'StringLiteral':

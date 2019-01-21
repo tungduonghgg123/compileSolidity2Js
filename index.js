@@ -6,7 +6,7 @@ const fs = require('fs');
 /**
 Change the solidity smart contract in here 
  */
-const soliditySC = fs.readFileSync('./smartContract/Input/smartContract.sol').toString();
+const soliditySC = fs.readFileSync('./smartContract/Input/sample.sol').toString();
 
 /**
 Parsing, transform solidity code to AST (Abstract Syntax Tree) 
@@ -17,8 +17,11 @@ var parsedSoliditySC = parse(soliditySC);
 /**
 Java script code generator. 
 At the moment, it just supports super simple solidity code
+
  */
 var generatedJsSC = jsGenerator(parsedSoliditySC);
+
+
 /**
 Hot dog, show off time!!
  */
